@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="./popper.min.js"></script>
+    <script src="./bootstrap.min.js"></script>
+    <script src="./JQCrud.js"></script>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./JQStyles.css">
+    <title>Document</title>
+</head>
+<body class="container">
+    <h1>Faculty API</h1>
+    <!-- Button trigger modal -->
+   <!---- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#updateModel">
+      Launch
+    </button>>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="updateModel" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update Record</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="updateId"><br><br>
+                    <div class="form-group">
+                      <label for="updateName">Name</label>
+                      <input type="text"
+                        class="form-control" name="updateName" id="updateName" aria-describedby="updateHelpId" placeholder="">
+                      <small id="updateHelpId" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-group">
+                      <label for="updateGender">Gender</label>
+                      <input type="text"
+                      class="form-control" name="updateGender" id="updateGender" aria-describedby="updateHelpId" placeholder="">
+                    <small id="updateHelpId" class="form-text text-muted"></small>
+                  </div>
+                  <div class="form-group">
+                    <label for="updateEmail">Email</label>
+                    <input type="email"
+                      class="form-control" name="updateEmail" id="updateEmail" aria-describedby="updateHelpId" placeholder="">
+                    <small id="updateHelpId" class="form-text text-muted"></small>
+                  </div>
+                  <div class="form-group">
+                    <label for="updateStreet">Street</label>
+                    <input type="text"
+                      class="form-control" name="updateStreet" id="updateStreet" aria-describedby="updateHelpId" placeholder="">
+                    <small id="updateHelpId" class="form-text text-muted"></small>
+                  </div>
+                  <div class="form-group">
+                    <label for="updateCity">City</label>
+                    <input type="text"
+                      class="form-control" name="updateCity" id="updateCity" aria-describedby="updateHelpId" placeholder="">
+                    <small id="updateHelpId" class="form-text text-muted"></small>
+                  </div>
+                  <div class="form-group">
+                    <label for="updateCountry">Country</label>
+                    <input type="text"
+                      class="form-control" name="updateCountry" id="updateCountry" aria-describedby="updateHelpId" placeholder="">
+                    <small id="updateHelpId" class="form-text text-muted"></small>
+                  </div>
+                  <div class="form-group">
+                    <label for="updateCourse">Course Code</label>
+                    <input type="text"
+                      class="form-control" name="updateCourse" id="updateCourse" aria-describedby="updateHelpId" placeholder="">
+                    <small id="updateHelpId" class="form-text text-muted"></small>
+                  </div>
+                  <div class="form-group">
+                    <label for="updatePhone">Phone No</label>
+                    <input type="text"
+                      class="form-control" name="updatePhone" id="updatePhone" aria-describedby="updateHelpId" placeholder="">
+                    <small id="updateHelpId" class="form-text text-muted"></small>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="updateSave">Update</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addModel">
+      Add Faculty
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="addModel" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add new Faculty Member</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" 
+                class="form-control" name="name" id="name" aria-describedby="titlehelp" placeholder="Name">
+              <small id="titlehelp" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <input type="text"
+                class="form-control" name="gender" id="gender" aria-describedby="bodyhelp" placeholder="Gender">
+              <small id="bodyhelp" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+              <label for="Email">Email</label>
+              <input type="email"
+                class="form-control" name="Email" id="Email" aria-describedby="updateHelpId" placeholder="Email">
+              <small id="updateHelpId" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+              <label for="Street">Street Address</label>
+              <input type="text"
+                class="form-control" name="Street" id="Street" aria-describedby="updateHelpId" placeholder="Street">
+              <small id="updateHelpId" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+              <label for="City">City</label>
+              <input type="text"
+                class="form-control" name="City" id="City" aria-describedby="updateHelpId" placeholder="City">
+              <small id="updateHelpId" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+              <label for="Country">Country</label>
+              <input type="text"
+                class="form-control" name="Country" id="Country" aria-describedby="updateHelpId" placeholder="Country">
+              <small id="updateHelpId" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+              <label for="Course">Course Code</label>
+              <input type="text"
+                class="form-control" name="Course" id="Course" aria-describedby="updateHelpId" placeholder="Course Code">
+              <small id="updateHelpId" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+              <label for="Phone">Phone No</label>
+              <input type="text"
+                class="form-control" name="Phone" id="Phone" aria-describedby="updateHelpId" placeholder="Phone Number">
+              <small id="updateHelpId" class="form-text text-muted"></small>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-info" id="addBtn">Add Faculty</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="rep">
+        <h3>Loading...</h3>
+    </div>
+</body>
+</html>
